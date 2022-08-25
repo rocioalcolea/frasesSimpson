@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [characters, setCharacters] = useState(null);
+
   const reqApi = async () => {
     const api = await fetch(
       "https://simpsons-quotes-api.herokuapp.com/quotes?count=3"
@@ -17,8 +18,11 @@ function App() {
   return (
     <Container>
       <Header />
-      <Welcome reqApi={reqApi()} />
-      <CharacterContainer characters={characters} />
+      {!characters ? (
+        <Welcome reqApi={reqApi} />
+      ) : (
+        <CharacterContainer characters={characters} />
+      )}
     </Container>
   );
 }

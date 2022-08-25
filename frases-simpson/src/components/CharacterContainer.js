@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import Character from "./Character";
 
 export default function CharacterContainer({ characters }) {
-  console.log(characters);
   return (
-    <div>
-      <p>Estamos dentro de character</p>
-    </div>
+    <ContainerCharacter>
+      {characters.map((characterData, index) => (
+        <Character characterData={characterData} key={index} />
+      ))}
+    </ContainerCharacter>
   );
 }
+
+const ContainerCharacter = styled.div`
+  display: flex;
+`;

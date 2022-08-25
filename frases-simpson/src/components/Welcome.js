@@ -6,7 +6,7 @@ export default function Welcome({ reqApi }) {
       <WelcomeText>
         Bienvenido, para poder utilizar las frases pincha sobre la imagen
       </WelcomeText>
-      <ImageLogo src={Imagen} alt="imagen simpson" onClick={reqApi} />
+      <ImageLogo src={Imagen} alt="imagen simpson" onClick={() => reqApi()} />
     </ContentLogo>
   );
 }
