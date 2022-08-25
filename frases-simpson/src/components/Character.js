@@ -1,6 +1,5 @@
 import styled from "styled-components";
 export default function Character({ characterData }) {
-  console.log(characterData);
   const { character, quote, image } = characterData;
   return (
     <ContentCharacter>
@@ -20,7 +19,7 @@ const ContentCharacter = styled.div`
   width: 300px;
   text-align: center;
   margin: 10px;
-  height: 400px;
+  height: 500px;
 
   &:hover {
     filter: brightness(40%);
